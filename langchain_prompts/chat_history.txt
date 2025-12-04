@@ -1,2 +1,2 @@
 HumanMessage(content = 'I want to request a refund to my order #12345.')
-aimESSAGE(content = 'Your refund request for order #12345 has been initiated. It will be refunded in 3-5 business days.')
+AIMessage(content = 'Your refund request for order #12345 has been initiated. It will be refunded in 3-5 business days.')
