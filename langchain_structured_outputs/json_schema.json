@@ -1,0 +1,10 @@
+{
+    "title" : "",
+    "description" : "",
+    "type" : "",
+    "properties" : {
+        "name" : "string",
+        "age" : "integer"
+    },
+    "required" : ["name"]
+}

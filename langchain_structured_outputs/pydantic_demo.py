@@ -4,7 +4,7 @@ from pydantic import BaseModel, EmailStr, Field
 from typing import Optional
 
 class Student(BaseModel):
-    name : str = 'Mizba'
+    name : str = 'Azaan'
     age : Optional[int] = None
     email : EmailStr
     cgpa : float = Field(gt = 0, lt = 10.1)
