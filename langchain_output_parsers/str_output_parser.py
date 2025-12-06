@@ -6,7 +6,7 @@ import os
 load_dotenv()
 
 model = HuggingFaceEndpoint(
-    repo_id = 'deepseek-ai/DeepSeek-V3.2',
+    repo_id = 'deepseek-ai/DeepSeek-R1-Distill-Qwen-14B',
     huggingfacehub_api_token = os.getenv('HF_TOKEN')
 )
 
