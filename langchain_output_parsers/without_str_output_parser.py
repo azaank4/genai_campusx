@@ -1,6 +1,6 @@
+# This is without using String Output Parser
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 from langchain_core.prompts import PromptTemplate
-from langchain_core.output_parsers import StrOutputParser
 from dotenv import load_dotenv
 import os
 load_dotenv()
@@ -24,9 +24,12 @@ template_2 = PromptTemplate(
     input_variables = ["text"]
 )
 
-parser = StrOutputParser()
+prompt_1 = template_1.invoke({"topic": "black hole"})
 
-chain = template_1 | llm | parser | template_2 | llm | parser
+detailed_report = llm.invoke(prompt_1)
+print("Detailed Report:\n", detailed_report.content)
 
-result = chain.invoke({"topic" : "black hole"})
-print("Final Summary:\n", result)
+prompt_2 = template_2.invoke({"text": detailed_report.content})
+
+summary = llm.invoke(prompt_2)
+print("Summary:\n", summary.content)
